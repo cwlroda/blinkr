@@ -53,7 +53,7 @@ class Speech2Text():
         # Sends the request to google to transcribe the audio
         response = self.client.recognize(request={"config": config, "audio": audio})
 
-        self.numChars = 15
+        self.numChars = 20
         
         self.calcLines()
         self.generateResults()
