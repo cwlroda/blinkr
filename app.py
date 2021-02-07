@@ -39,10 +39,7 @@ def speech2text():
         base64towav(data)
         
         transcriber = Speech2Text()
-        transcriber.transcribe()
-        
-        lines = 4
-        results = "20/20"
+        results, lines = transcriber.transcribe()
         
         response = {}
         response['response'] = {

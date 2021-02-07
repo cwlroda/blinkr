@@ -16,7 +16,7 @@ function clickPlay() {
 window.onload = function () {
     const recordAudio = () =>
         new Promise(async resolve => {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
             const mediaRecorder = new MediaRecorder(stream);
             let audioChunks = [];
 
