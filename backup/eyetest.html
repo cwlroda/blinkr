@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EyeTest</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/eyetest.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/web-audio-recorder-js-0.1.1/lib/WavAudioEncoder.min.js') }}"></script>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <button>Record</button>
+    <audio id="player" controls></audio>
+    <script>
+        var clicked = false;
+        var b = document.querySelector("button");
+        const player = document.getElementById('player');
+        player.currentTime = 0;
+        var playPromise = player.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Automatic playback started!
+                // Show playing UI.
+                
+            })
+            .catch(error => {
+                // Auto-play was prevented
+                // Show paused UI.
+            });
+        }
+        
+        console.log(player.currentTime);
+        setInterval(function(){
+            if(player.currentTime > 10){
+                isStopped = true;
+                console.log(isStopped);
+                player.pause();
+            }
+        }, 1000);
+    
+        const handleSuccess = function(stream) {
+            if (window.URL) {
+                player.srcObject = stream;
+            } else {
+                player.src = stream;
+            }
+
+            const options = {mimeType: 'audio/webm'};
+            const recordedChunks = [];
+
+            const context = new AudioContext();
+            const source = context.createMediaStreamSource(stream);
+            const dest = context.createMediaStreamDestination(stream);
+            const mediaRecorder = new MediaRecorder(dest.stream, options);
+            source.connect(dest);
+            
+            mediaRecorder.start();
+            console.log("recorder started");
+
+            mediaRecorder.ondataavailable = function(e) {
+                recordedChunks.push(e.data);
+                console.log("recording data");
+            };
+
+            if(isStopped === true) {
+                mediaRecorder.stop();
+                console.log("hi again");
+                isStopped = false;
+            }
+
+            mediaRecorder.onstop = function(e) {
+                console.log("data available after MediaRecorder.stop() called.");
+                var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+                var audioURL = window.URL.createObjectURL(blob);
+                audio.src = audioURL;
+                console.log("recorder stopped");
+            }
+        };
+    
+        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+            .then(handleSuccess);
+    </script>
+    <!-- <img class="left" onclick="record()" src="https://webstockreview.net/images/data-clipart-record-11.png"> -->
+</body>
+
+</html>

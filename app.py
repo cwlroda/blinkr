@@ -1,3 +1,5 @@
+import flask
+import json
 import base64
 from flask import Flask, request, render_template
 from speech2text import Speech2Text
@@ -23,6 +25,10 @@ def eyetest():
 def eyetips():
     return render_template('eyetips.html')
 
+@app.route('/results')
+def results():
+    return render_template('results.html')
+
 @app.route('/speech2text', methods=['POST'])
 def speech2text():
     try:
@@ -33,11 +39,23 @@ def speech2text():
         base64towav(data)
         
         transcriber = Speech2Text()
-        transcriber.transcribe()        
+        transcriber.transcribe()
+        
+        lines = 4
+        results = "20/20"
+        
+        response = {}
+        response['response'] = {
+            'results': str(results),
+            'lines': str(lines),
+        }
+        
+        return flask.jsonify(response)
         
     except Exception as ex:
         res = dict({'message': str(ex)})
         print(res)
+        return app.response_class(response=json.dumps(res), status=500, mimetype='application/json')
 
 if __name__ == '__main__':
     app.run(debug=True,

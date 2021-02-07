@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/eyetips.js') }}"></script>
 
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
@@ -17,12 +17,13 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <link rel="preload" as="image" href="https://cdn-web-img.mdcalc.com/content/snellen2.png">
-    <link rel="preload" as="image" href="https://cdn.iconscout.com/icon/free/png-512/recording-voice-recognization-speech-audio-record-8-15390.png">
-    <link rel="preload" as="image" href="https://image.flaticon.com/icons/png/512/26/26445.png">
-    <link rel="preload" as="image" href="https://icons-for-free.com/iconfiles/png/512/play+icon-1320184953284378621.png">
-    <link rel="preload" as="image" href="https://www.dropbox.com/s/jlp7ykmjzey7yz7/record-512.png?dl=1">
-    <link rel="preload" as="image" href="https://www.dropbox.com/s/46p0csf3ibl6j3b/play.png?dl=1">
+    <link rel="preload" as="video" href="https://www.youtube.com/watch?v=aofq5o7OiCI&ab_channel=DoctorEyeHealth">
+    <link rel="preload" as="video" href="https://m.media-amazon.com/images/I/41hOTtV7tiL._AC_SS350_.jpg">
+    <link rel="preload" as="video" href="https://m.media-amazon.com/images/I/41hOTtV7tiL._AC_SS350_.jpg">
+    <link rel="preload" as="video" href="https://m.media-amazon.com/images/I/41hOTtV7tiL._AC_SS350_.jpg">
+    <link rel="preload" as="video" href="https://m.media-amazon.com/images/I/41hOTtV7tiL._AC_SS350_.jpg">
+    <link rel="preload" as="video" href="https://m.media-amazon.com/images/I/41hOTtV7tiL._AC_SS350_.jpg">
+
 </head>
 
 <body>
@@ -31,8 +32,8 @@
     <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="/#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+        <a href="/#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
         <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
     </div>
     </div>
@@ -40,52 +41,61 @@
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
         <a href="/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+        <a href="/#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="/#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
     </div>
 
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px;margin-top:20px">
-    
     <div class="row">
-        <div class="col">
-            <div class="instructions">
-                <h2><b>Instructions</b></h2>
-                <p><br>
-                <ol>
-                    <h3>
-                    <li>Please stand
-                        <script>
-                            var dist = $(document).height() / 96 * 2.54 * 0.12;
-                            document.write(dist.toPrecision(2));
-                        </script>
-                        meters away from your current screen.
-                    </li>
-                    <li>Test your visual acuity with correction (contact lenses or
-                        glasses).</li>
-                    <li>Test one eye at a time. Start with the right eye, covering the
-                        left one without pressing on it. Then, examine the left eye by
-                        doing the opposite.</li>
-                    <li>Read the letters from largest to smallest.</li>
-                    <li>Click the record button to start, and stop whenever you are unable to read any letters.</li>
-                    <li>Click the generate button to view your results.</li>
-                    </h3>
-                </ol>
-                </p>
+        <div class="column">
+            <h1><b>Eyecare Tips</b></h1>
+            <h3>Here are some educational videos from Joseph J. Allen, O.D, F.A.A.O (Doctor Eye Health). Enjoy!</h3>
+            <br><br>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/aofq5o7OiCI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/rPfCtJ1PX9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7roXAdaEraA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="controls">
-                <button id="record" onclick="clickRecord()"></button>
-                <button id="stop" onclick="clickStop()" disabled></button>
-                <button id="play" onclick="clickPlay()" disabled></button>
-                <button id="save" disabled></button>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/8KhpKPn0gYc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9yRk_zzH9ys" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GNgSPrUwu7k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <img class="chart" src="https://cdn-web-img.mdcalc.com/content/snellen2.png">
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/eyetips.js') }}"></script>
+    <div class="container">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <div class="footer">
+        <p>blinkr. Promoting good eye habits. Improving lives.</p>
+    </div>
     </div>
 </body>
 </html>
