@@ -1,0 +1,103 @@
+.row {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    width: 70%;
+    position: relative;
+    top: 5vh;
+    height: 100vh;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
+
+.text1,
+.text2 {
+    display: none;
+}
+
+.fade-in { 
+    animation: fadeInAnimation ease 3s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+}
+
+.container {
+    /* display: flex; */
+    margin: auto;
+    position: relative;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 0.8vh;
+    
+}
+
+.chart {
+    max-height: 90vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .controls, */
+.instructions {
+    margin: auto;
+    padding: 3vh;
+    display: block;
+    text-align: justify;
+}
+
+button {
+    width: 5vh;
+    height: 5vh;
+    border: none;
+}
+
+#record {
+    background-image: url("https://cdn.iconscout.com/icon/free/png-512/recording-voice-recognization-speech-audio-record-8-15390.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+}
+
+#stop {
+    background-image: url("https://image.flaticon.com/icons/png/512/26/26445.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+}
+
+#play {
+    background-image: url("https://icons-for-free.com/iconfiles/png/512/play+icon-1320184953284378621.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+}
+
+#save {
+    background-image: url("https://cdn.iconscout.com/icon/free/png-512/recording-voice-recognization-speech-audio-record-8-15390.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+}

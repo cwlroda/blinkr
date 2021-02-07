@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>EyeCare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <link rel="preload" as="image" href="https://www.dropbox.com/s/h7wfhp0or0qc8i1/closedeye.png?dl=1">
+    <link rel="preload" as="image" href="https://www.dropbox.com/s/mnztn69b6840aex/openeye.png?dl=1">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <div class="row fade-in">
+        <div class="column">
+            <a href="/eyetest">
+                <img class="left" onmouseover="blink(this)" onmouseout="blinkBack(this)" src="https://www.dropbox.com/s/h7wfhp0or0qc8i1/closedeye.png?dl=1">
+            </a>
+            <div class="text1"><h1><b>Take an eye test!</b></h1></div>
+        </div>
+        <div class="column">
+            <a href="/eyetips">
+                <img class="right" onmouseover="blink(this)" onmouseout="blinkBack(this)" src="https://www.dropbox.com/s/h7wfhp0or0qc8i1/closedeye.png?dl=1">
+            </a>
+            <div class="text2"><h1><b>View eye care tips!</b></h1></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <a id="about"><h1>About Us</h1></a>
+        <br>
+        <p>
+            <h3>
+            Amidst the COVID-19 pandemic, many people are now working or studying from home. This means more screen time. We too have experienced the tiredness and fatigue from eye strain. blinkr helps you develop good eyecare habits and reminds you to take half-hourly breaks. blinkr also provides an easy way to gauge overall vision using an eye test based on the Snellen chart. Our model uses machine learning and speech-to-text technology to accurately analyze your verbal responses to rows of letters or numbers, and calculates your visual acuity score. We hope this paves the way for the development of comprehensive, AI-assisted eye tests, which would minimize trips to the doctor in a pandemic.
+            </h3>
+        </p>
+    </div>
+
+    <div class="container">
+        <a id="bfg"><h1>blinkr For Good</h1></a>
+        <br>
+        <p>
+            <h3>
+                We understand that not everyone is blessed with good vision. Many people suffer from vision impairment and require assistance in their day-to-day activities. With your help, we can improve their lives as you improve your vision. For every eye test completed on blinkr, our sponsors will donate $1 to charities supporting people with vision impairment.
+            </h3>
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>blinkr. Promoting good eye habits. Improving lives.</p>
+    </div>
+</body>
+
+</html>
