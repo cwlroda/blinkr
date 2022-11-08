@@ -16,7 +16,7 @@ libcst==0.3.16
 MarkupSafe==1.1.1
 mypy-extensions==0.4.3
 proto-plus==1.13.0
-protobuf==3.14.0
+protobuf==3.18.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pytz==2021.1
@@ -26,5 +26,5 @@ rsa==4.7
 six==1.15.0
 typing-extensions==3.7.4.3
 typing-inspect==0.6.0
-urllib3==1.26.3
+urllib3==1.26.5
 Werkzeug==1.0.1
