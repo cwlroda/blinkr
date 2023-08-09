@@ -7,7 +7,7 @@ google-api-core==1.25.1
 google-auth==1.25.0
 google-cloud-speech==2.0.1
 googleapis-common-protos==1.52.0
-grpcio==1.35.0
+grpcio==1.53.2
 gunicorn==20.0.4
 idna==2.10
 itsdangerous==1.1.0
