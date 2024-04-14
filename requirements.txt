@@ -9,7 +9,7 @@ google-cloud-speech==2.0.1
 googleapis-common-protos==1.52.0
 grpcio==1.35.0
 gunicorn==20.0.4
-idna==2.10
+idna==3.7
 itsdangerous==1.1.0
 Jinja2==2.11.3
 libcst==0.3.16
